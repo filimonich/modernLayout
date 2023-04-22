@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-cards {
+  padding: 15px 0;
+}
+
+.user-card {
+  border: 1px solid #f00;
+  padding: 15px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-rows: 50px 120px 100px;
+  grid-template-columns: 300px 1fr 200px;
+  grid-template-areas:
+    "names names rating"
+    "pic slogan slogan"
+    "pic actions actions";
+}
+
+.user-card__pic {
+  display: grid;
+  grid-area: pic;
+}
+
+.user-card__names {
+  grid-area: names;
+  font-size: 30px;
+  grid: 20px;
+}
+
+.user-card__rating {
+  grid-area: rating;
+  font-size: 26px;
+  text-align: right;
+  grid: 20px;
+}
+
+.user-card__slogan {
+  grid-area: slogan;
+  font-style: italic;
+}
+
+.user-card__actions {
+  grid-area: actions;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.user-card__btn {
+}
+
+.btn {
+  cursor: pointer;
+  text-align: center;
+  background: #f90;
+  padding: 10px;
+  flex: 2;
+}
+
+.btn:first-child {
+  margin-right: 10px;
+}
+
+.btn:nth-child(2) {
+  flex: 3;
+}
+
+@media screen and (max-width: 750px) {
+  .user-card {
+    grid-gap: 10px;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas:
+      "pic names names"
+      "pic rating rating"
+      "slogan slogan slogan"
+      "actions actions actions";
+  }
+
+  .user-card__names {
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .user-card {
+    grid-gap: 10px;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+      "names names"
+      "rating rating"
+      "slogan slogan"
+      "pic actions"
+      "pic actions";
+  }
+
+  .user-card__names {
+    text-align: center;
+  }
+
+  .user-card__rating {
+    text-align: center;
+  }
+
+  .user-card__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    flex: 0;
+    align-self: stretch;
+  }
+
+  .btn:first-child {
+    margin-right: 0;
+  }
+
+  .btn:nth-child(2) {
+    flex: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .user-card {
+    grid-gap: 10px;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: 2fr;
+    grid-template-areas:
+      "names"
+      "rating"
+      "slogan"
+      "pic"
+      "actions";
+  }
+  .user-card__slogan {
+    text-align: center;
+  }
+  .user-card__pic {
+    justify-content: center;
+  }
+  .user-card__actions {
+    grid-gap: 10px;
+  }
+}
