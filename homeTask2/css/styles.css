@@ -141,7 +141,7 @@ img {
   .user-card {
     grid-gap: 10px;
     /* grid-template-rows: repeat(5, auto); */
-    grid-template-columns: 2fr;
+    grid-template-columns: none;
     grid-template-areas:
       "names"
       "rating"
