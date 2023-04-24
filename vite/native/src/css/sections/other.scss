@@ -1,9 +1,7 @@
 @media screen and (min-width: 541px) {
   .catalog-box-other.catalog-box {
-    --bigW: 600;
-    --bigH: 1086;
     --ratio: calc(var(--bigW) / var(--bigH));
-    --smallW: calc((100% - var(--gap) * (2 + 4 * var(--ratio))) / (6 * var(--ratio) + 1));
+    --smallW: calc((100% - var(--gap) * (1 + 5 * var(--ratio))) / (6 * var(--ratio) + 1));
     grid-template-columns: 1fr var(--smallW);
   }
 
@@ -14,7 +12,7 @@
 
 @media screen and (min-width: 841px) {
   .catalog-box-other.catalog-box {
-    --smallW: calc((100% - var(--gap) * (6 + var(--ratio))) / (3 * var(--ratio) + 3));
+    --smallW: calc((100% - var(--gap) * (2 + 2 * var(--ratio))) / (3 * var(--ratio) + 2));
     grid-template-columns: var(--smallW) 1fr var(--smallW);
   }
 
