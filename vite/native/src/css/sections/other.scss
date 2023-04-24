@@ -1,0 +1,25 @@
+@media screen and (min-width: 541px) {
+  .catalog-box-other.catalog-box {
+    --bigW: 600;
+    --bigH: 1086;
+    --ratio: calc(var(--bigW) / var(--bigH));
+    --smallW: calc((100% - var(--gap) * (2 + 4 * var(--ratio))) / (6 * var(--ratio) + 1));
+    grid-template-columns: 1fr var(--smallW);
+  }
+
+  .catalog-item__full-other.catalog-item__full {
+    grid-row: span 6;
+  }
+}
+
+@media screen and (min-width: 841px) {
+  .catalog-box-other.catalog-box {
+    --smallW: calc((100% - var(--gap) * (6 + var(--ratio))) / (3 * var(--ratio) + 3));
+    grid-template-columns: var(--smallW) 1fr var(--smallW);
+  }
+
+  .catalog-item__full-other.catalog-item__full {
+    grid-column: 2;
+    grid-row: span 4;
+  }
+}
