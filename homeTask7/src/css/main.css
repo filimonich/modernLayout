@@ -1,0 +1,83 @@
+@import "https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap'";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base{
+	.post__item{
+		@apply text-3xl font-extrabold font-heading
+	}
+} */
+
+@layer base {
+  h2 {
+    @apply text-3xl font-extrabold font-heading text-blue;
+  }
+}
+
+@layer components {
+  .profit-section {
+    @apply bg-black py-3;
+  }
+
+  .profit-items {
+    /* @apply grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 */
+    @apply grid gap-[30px] grid-cols-ideal-[250px];
+  }
+
+  .profit-item {
+    @apply border border-blue-extralight;
+  }
+}
+
+@layer components {
+  .catalog {
+    --gap: theme(spacing.2);
+  }
+
+  @media screen(sm) {
+    .catalog {
+      --bigW: 600;
+      --bigH: 1068;
+      --ratio: calc(var(--bigW) / var(--bigH));
+      --smallW: calc(
+        (100% - var(--gap) * (1 + 3 * var(--ratio))) / (4 * var(--ratio) + 1)
+      );
+    }
+  }
+
+  @media screen(lg) {
+    .catalog {
+      --smallW: calc(
+        (100% - var(--gap) * (2 + var(--ratio))) / (2 * var(--ratio) + 2)
+      );
+    }
+  }
+}
+
+/* @layer components{
+	.catalog-item{
+		--plus: theme(spacing.10);
+		@apply relative;
+	}
+
+	.catalog-item::before{
+		content: '';
+		@apply absolute inset-4 border-2 border-blue-extralight;
+	}
+
+	.catalog-item::after{
+		content: '+';
+		line-height: var(--plus);
+		width: var(--plus);
+		height: var(--plus);
+		left: calc(50% - var(--plus) / 2);
+		top: calc(50% - var(--plus) / 2);
+		@apply text-5xl absolute text-center text-red opacity-0 transition-opacity;
+	}
+
+	.catalog-item:hover::after{
+		@apply opacity-100
+	}
+} */
